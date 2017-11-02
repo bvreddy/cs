@@ -11,3 +11,37 @@ License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: csh_text
 */
 
+/**
+ * WordPress CSS Shapes 
+ * @package csh
+ */
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+define( 'CSH_VERSION', '0.1' );
+define( 'CSH_WP_MIN_VERSION', '3.1.0' );
+define( 'CSH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
+
+
+// include in admin and public pages
+require_once('inc/class-csh-register.php');
+
+if ( is_admin() ) {
+    // include this in admin pages
+
+} else {
+    // include only in public pages ( not wp admin )
+
+}
+
+
+register_activation_hook( __FILE__, array( 'CSH_Register', 'activate' )  );
+// register_deactivation_hook( __FILE__, array( 'CSH_Register', 'deactivate' )  );
+// register_uninstall_hook(__FILE__, array( 'CSH_Register', 'uninstall' ) );
+
+// when plugin updated - check version diff
+add_action('plugins_loaded', array( 'CSH_Register', 'plugin_update' ) );
+
+
+
+

@@ -25,6 +25,8 @@ define( 'CSH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 
 // include in admin and public pages
 require_once('inc/class-csh-register.php');
+require_once('admin/class-csh-images.php');
+
 
 if ( is_admin() ) {
     // include this in admin pages
@@ -43,5 +45,6 @@ register_activation_hook( __FILE__, array( 'CSH_Register', 'activate' )  );
 add_action('plugins_loaded', array( 'CSH_Register', 'plugin_update' ) );
 
 
-
+// add mimes types - add support svg upload
+add_filter( 'upload_mimes', array( 'CSH_images', 'add_mime_types' ) );
 

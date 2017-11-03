@@ -11,11 +11,7 @@ class CSH_images {
      */
     public static function add_mime_types( $mimes ) {
 
-        // echo '<pre>';
-        // var_dump( $mimes );
-        // echo '</pre>';
-        
-        // // New allowed mime types.
+        // New allowed mime types.
         $mimes['svg'] = 'image/svg+xml';
         $mimes['svgz'] = 'image/svg+xml';
 

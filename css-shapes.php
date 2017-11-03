@@ -28,6 +28,10 @@ require_once('inc/class-csh-register.php');
 require_once('admin/class-csh-images.php');
 
 
+
+
+require_once('inc/test.php');
+
 if ( is_admin() ) {
     // include this in admin pages
 

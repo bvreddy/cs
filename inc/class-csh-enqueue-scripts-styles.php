@@ -3,7 +3,7 @@
  * 
  */
 
-class CSH_enqueue_Scripts_Sytles {
+class CSH_Enqueue_Scripts_Sytles {
 
 
     public static function enqueue() {

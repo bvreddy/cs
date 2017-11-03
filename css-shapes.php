@@ -26,6 +26,7 @@ define( 'CSH_PLUGIN_FILE', __FILE__ );
 // include in admin and public pages
 require_once('inc/class-csh-register.php');
 require_once('admin/class-csh-images.php');
+require_once('inc/class-csh-shortcode.php');
 
 
 
@@ -54,4 +55,9 @@ add_action('plugins_loaded', array( 'CSH_Register', 'plugin_update' ) );
 add_filter( 'upload_mimes', array( 'CSH_images', 'add_mime_types' ) );
 
 // CSH_enqueue_Scripts_Sytles
-add_action('wp_enqueue_scripts', array( 'CSH_enqueue_Scripts_Sytles', 'enqueue' ) );
+add_action('wp_enqueue_scripts', array( 'CSH_Enqueue_Scripts_Sytles', 'enqueue' ) );
+
+
+$shortcode = new CSH_Shortcode();
+
+add_action('init', array( $shortcode, 'csh_shortcodes_init' ) );

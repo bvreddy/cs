@@ -37,7 +37,7 @@
 
         
         $o = '';
-        $o .= '<span class=" '.$float_class.' " style="shape-outside: '.$shape_outside.'; shape-margin: '.$margin.' " >';
+        $o .= '<span class=" '.$float_class.' shape " style="shape-outside: '.$shape_outside.'; shape-margin: '.$margin.' " >';
         $o .= $content;
         $o .= '</span>';
         

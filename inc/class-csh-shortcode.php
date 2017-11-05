@@ -57,13 +57,20 @@
                 'id' => '',
                 'float' => 'left',
                 'shape' => '',
+                'margin' => '1em',
+                'width' => null,
+                'height' => null,
             ), $atts, $shortcode );
             // use like -  '.$a["title"].'   
         
         $id = $a["id"];
         $float = $a["float"];
         $shape = $a["shape"];
+        $margin = $a["margin"];
+        $width = $a["width"];
+        $height = $a["height"];
         
+        $url =  wp_get_attachment_url( $id );
 
         if( 'left' == $float) {
             $float_class = 'csh-left';
@@ -71,8 +78,8 @@
             $float_class = 'csh-right';
         }
 
+
         if( null == $shape || '' == $shape ) {
-            $url =  wp_get_attachment_url( $id );
             $shape_outside = "url($url)";
         } else {
             $shape_outside = $shape;
@@ -80,18 +87,35 @@
 
         
 
-
-
         // polygon(39% 0%, 87% 72%, 86% 99%, 100% 100%, 100% 0%);
         
         $o = '';
         $o .= '<img src=" '.$url.' ">';
         $o .= '';
         
-        // $i = wp_get_attachment_image( $id );
-        // return $i;
 
-        return $o;
+        // there is a problem if pass this type - with suffix for - svg images ..
+        // return like this - <img width="1" height="1"  --  1 * 1 - its not displaying ..
+        $array_size = array( $width, $height );
+
+      
+        $array_attr = array(
+            'class' => ' '.$float_class.' ',
+            // 'style' => 'shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.' ',
+            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.'; ',
+        );
+
+
+        $i = '';
+        // $i .= ' '. wp_get_attachment_image( $id, $array_size, '', $array_attr ).' ';
+        $i .= ' '. wp_get_attachment_image( $id, '', '', $array_attr ).' '; 
+        $i .= '';
+        $i .= '';
+
+
+
+        return $i;
+        // return $o;
     }
 
 

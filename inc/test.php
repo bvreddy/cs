@@ -1,16 +1,16 @@
 <?php
 
+// echo get_posts( array( 'post_type' => 'attachment' ) );
 
 
+// echo wp_get_attachment_url( 47 );
 
-$x = wp_get_attachment_url( 57 );
+// echo wp_get_attachment_image( 47 );
 
-$y = wp_get_attachment_image( 57 );
+// echo wp_get_attachment_link( 47, array(500, 500) );
 
 
-$z = wp_get_attachment_link( 42 );
-
-$images = get_children( 'post_type=attachment&post_mime_type=image' );
+// $images = get_children( 'post_type=attachment&post_mime_type=image' );
 
 // echo '<pre>';
 // var_dump( $x );

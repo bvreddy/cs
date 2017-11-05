@@ -7,7 +7,7 @@
  class CSH_Shortcode {
 
     // for svg, transparent images it good.. 
-    public function shortcode( $atts = [], $content = 'null', $shortcode = '') {
+    public function shape( $atts = [], $content = 'null', $shortcode = '') {
 
         /**
          * 
@@ -45,8 +45,6 @@
             $float_class = 'csh-right';
         }
 
-
-        
         $o = '';
         $o .= '<span class=" '.$float_class.' shape " style="shape-outside: '.$shape_outside.'; shape-margin: '.$margin.' " >';
         $o .= $content;
@@ -61,14 +59,12 @@
 
 
     // directly adding images..
-    public function img( $atts = [], $content = 'null', $shortcode = '') {
+    public function shape_img( $atts = [], $content = 'null', $shortcode = '') {
         
         $a = shortcode_atts(
             array(
                 'id' => '',
-                'url' => '',
                 'float' => 'left',
-                'shape-outside' => '',
                 'margin' => '1em',
                 'width' => null,
                 'height' => null,
@@ -77,7 +73,6 @@
         
         $img_id = $a["id"];
         $float = $a["float"];
-        $shape = $a["shape-outside"];
         $margin = $a["margin"];
         $width = $a["width"];
         $height = $a["height"];
@@ -90,29 +85,13 @@
             $float_class = 'csh-right';
         }
 
-        if ( '' == $url || null == $url ) {
-            $shape_outside = "url($url_id)";
-        } else {
-            $shape_outside = "url($url)";
-        }
+        $shape_outside = "url($url_id)";
         
-        // if( null == $shape || '' == $shape ) {
-        //     $shape_outside = "url($url_id)";
-        // } else {
-        //     $shape_outside = $shape;
-        // }
-
-        
-
-        // polygon(39% 0%, 87% 72%, 86% 99%, 100% 100%, 100% 0%);
-        
-        // $o = '';
-        // $o .= '<img src=" '.$url_id.' ">';
-        // $o .= '';
-        
-
-        // there is a problem if pass this type - with suffix for - svg images ..
-        // return like this - <img width="1" height="1"  --  1 * 1 - its not displaying ..
+        /**
+         * there is a problem if pass this way - with suffix for - svg images ..
+         * return like this - <img width="1" height="1"  --  1 * 1 - its not displaying ..
+         * instead added styles using style attributes
+         */
         $array_size = array( $width, $height );
 
       
@@ -123,16 +102,13 @@
         );
 
 
-        $i = '';
-        // $i .= ' '. wp_get_attachment_image( $img_id, $array_size, '', $array_attr ).' ';
-        $i .= ' '. wp_get_attachment_image( $img_id, '', '', $array_attr ).' '; 
-        $i .= '';
-        $i .= '';
+        $o = '';
+        // $o .= ' '. wp_get_attachment_image( $img_id, $array_size, '', $array_attr ).' ';
+        $o .= ' '. wp_get_attachment_image( $img_id, '', '', $array_attr ).' '; 
+        $o .= '';
+        $o .= '';
 
-
-
-        return $i;
-        // return $o;
+        return $o;
     }
 
 
@@ -143,8 +119,8 @@
 
     //  Register shortcode
     public function csh_shortcodes_init() {
-        add_shortcode('shape', array( $this, 'shortcode' ) );
-        add_shortcode('img', array( $this, 'img' ) );
+        add_shortcode('shape', array( $this, 'shape' ) );
+        add_shortcode('shape_img', array( $this, 'shape_img' ) );
     }
 
 }

@@ -35,21 +35,24 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
          * @param int id - image id - based on this get the image path
          * @param string url  - image url - shape can be given using image id or direct url
          * @param string float - float - left or right - default to left
-         * @param string margin - set shape-margin 
+         * @param string margin - set shape-margin
+         * @param string class  - to add class names
          * 
          * in this shorcode width, height is not needed, 
          * as this shortcode wrap to already exist/ seteled image with widht, height
          * 
-         * @var img_id  - declare with shortcode attribute id to this variable
-         * @var \float  - decalre with shortcode attribute float to this variable
-         * @var margin  - declare with shortcode attribute margin value
-         * @var url     - decalre with shortcode attribute url value
+         * @var $img_id  - declare with shortcode attribute id to this variable
+         * @var $\float  - decalre with shortcode attribute float to this variable
+         * @var $margin  - declare with shortcode attribute margin value
+         * @var $url     - decalre with shortcode attribute url value
+         * @var $class     - decalre with shortcode attribute class value
          * 
-         * @var url_id  - get image url based on given img id
-         * @var shape_outside  - css shape-outside value - here given image url
+         * @var $url_id  - get image url based on given img id
+         * @var $shape_outside  - css shape-outside value - here given image url
          *                       works well if it is a transparent image, svg
-         * @var float_class  - if float given is right - add csh-right - image flow to right
+         * @var $float_class  - if float given is right - add csh-right - image flow to right
          *                     if left - add csh-left - default one - img flow to left
+         * @var $class  - add class names - img-80, img-90 - to make maxwidth to the image parent
          */
         $a = shortcode_atts(
             array(
@@ -57,6 +60,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
                 'url' => '',
                 'float' => 'left',
                 'margin' => '1em',
+                'class' => '',
             ), $atts, $shortcode );
            // use like -  '.$a["title"].'   
         
@@ -64,6 +68,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $float = $a["float"];
         $margin = $a["margin"];
         $url = $a["url"];
+        $class = $a["class"];
         
         $url_id =  wp_get_attachment_url( $img_id );
 
@@ -80,7 +85,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         }
 
         $o = '';
-        $o .= '<span class=" '.$float_class.' shape " style="shape-outside: '.$shape_outside.'; shape-margin: '.$margin.' " >';
+        $o .= '<span class=" '.$float_class.' '.$class.' shape" style="shape-outside: '.$shape_outside.'; shape-margin: '.$margin.' " >';
         $o .= $content;
         $o .= '</span>';
         

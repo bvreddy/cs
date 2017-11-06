@@ -6,7 +6,7 @@
  *  activate, deactivate, uninstall, update
  * 
  * add values to Database - wp_options table
- *  plugin details
+ *      plugin details
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
@@ -17,7 +17,13 @@ class CSH_Register {
 
     /**
      * When plugin activate this function will call
+     * 
+     * Check min wp version 
+     * calls self::db_plugin_details - add plugin details to db
+     * 
+     * @since 1.0.0
      * @uses register_activation_hook
+     * 
      * @return void
      */
     public static function activate() {
@@ -33,6 +39,7 @@ class CSH_Register {
 
     /**
      * When plugin deactivate
+     * @since 1.0.0
      * @uses register_deactivation_hook
      * @return void
      */
@@ -42,6 +49,7 @@ class CSH_Register {
 
     /**
      * When plugin uninstall ( delete )
+     * @since 1.0.0
      * @uses register_uninstall_hook
      * @return void
      */
@@ -51,10 +59,13 @@ class CSH_Register {
     
 
     /**
-     * @action plugins_loaded hook 
+     * @uses plugins_loaded hook 
      * 
      * compare this content version with saved version in db
      * If version is different then run activate function
+     * 
+     * @since 1.0.0
+     * 
      * @return void
      */
     public static function plugin_update() {
@@ -70,6 +81,8 @@ class CSH_Register {
 
     /**
      * Add plugin Details to db - wp_options table
+     * Add plugin version to db - useful while updating plugin
+     * 
      * @uses self::activate()
      * @return void
      */

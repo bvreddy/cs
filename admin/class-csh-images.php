@@ -1,13 +1,28 @@
 <?php
+/**
+ * Handle WordPress images upload
+ * 
+ * Added support for uploading svg images
+ * 
+ * @package csh
+ */
 
+
+if ( ! defined( 'ABSPATH' ) ) exit;
+
+if ( ! class_exists( 'CSH_images' ) ) :
 
 class CSH_images {
 
     /**
-     * add mime types
-     * @action upload_mimes
-     * @param Current array of mime types
+     * add mime types ( support mime uploads )
+     * @action css-shapes->upload_mimes - filter hook
+     * 
+     * @param $mimes Current array of mime types
+     * 
      * @return Updated array of mime types
+     * 
+     * @since 1.0.0
      */
     public static function add_mime_types( $mimes ) {
 
@@ -20,3 +35,5 @@ class CSH_images {
 
 
 }
+
+endif; // END class_exists check

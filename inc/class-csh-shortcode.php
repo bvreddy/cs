@@ -139,6 +139,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
                 'width' => null,
                 'height' => null,
                 'class' => '',
+                'shape' => '',
             ), $atts, $shortcode );
             // use like -  '.$a["title"].'   
         
@@ -148,6 +149,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $width = $a["width"];
         $height = $a["height"];
         $class = $a["class"];
+        $custom_shape = $a["shape"];
         
         $url_id =  wp_get_attachment_url( $img_id );
 
@@ -173,7 +175,15 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $class .= " shape csh-image wp-image-$img_id";
         $class .= " $float_class";
 
-        $shape_outside = "url($url_id)";
+        if ( '' == $custom_shape || null == $custom_shape ) {
+            $shape_outside = "url($url_id)";
+        } else {
+            $shape_outside = $custom_shape;
+        }
+
+
+
+        // $shape_outside = "url($url_id)";
 
 
         $array_attr = array(

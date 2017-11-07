@@ -20,6 +20,9 @@ class CSH_Enqueue_Scripts_Sytles {
         wp_enqueue_style( 'csh_styles', plugins_url( 'assets/css/main.css', CSH_PLUGIN_FILE ), '', CSH_VERSION );
 
         // wp_enqueue_script( 'csh_polyfill', plugins_url( 'assets/js/shapes-polyfill.js', CSH_PLUGIN_FILE ), '', true );
+        
+        wp_enqueue_script( 'csh_script', plugins_url( 'assets/js/app.js', CSH_PLUGIN_FILE ), '', true );
+
     }
 
 }

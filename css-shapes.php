@@ -31,6 +31,9 @@ require_once('admin/class-csh-images.php');
 require_once('inc/class-csh-shortcode.php');
 
 
+require_once('inc/test.php');
+
+
 /**
  * is_admin - include file to admin area - only if it is_admin
  * else - include files to non-admin area 

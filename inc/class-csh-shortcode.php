@@ -138,6 +138,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
                 'margin' => '1em',
                 'width' => null,
                 'height' => null,
+                'class' => '',
             ), $atts, $shortcode );
             // use like -  '.$a["title"].'   
         
@@ -146,6 +147,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $margin = $a["margin"];
         $width = $a["width"];
         $height = $a["height"];
+        $class = $a["class"];
         
         $url_id =  wp_get_attachment_url( $img_id );
 
@@ -155,18 +157,27 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
             $float_class = 'csh-right';
         }
 
-        $shape_outside = "url($url_id)";
+
+        
         
         /**
          * there is a problem if pass this way - with suffix for - svg images ..
          * return like this - <img width="1" height="1"  --  1 * 1 - its not displaying ..
          * instead added styles using style attributes
+         * 
+         * @see https://core.trac.wordpress.org/ticket/26256
          */
         // $array_size = array( $width, $height );
 
       
+        $class .= " shape csh-image wp-image-$img_id";
+        $class .= " $float_class";
+
+        $shape_outside = "url($url_id)";
+
+
         $array_attr = array(
-            'class' => ' '.$float_class.' ',
+            'class' => ' '.$class.' ',
             // 'style' => 'shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.' ',
             'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.'; ',
         );

@@ -67,3 +67,6 @@ $shortcode = new CSH_Shortcode();
 
 // Register shorcodes
 add_action('init', array( $shortcode, 'csh_shortcodes_init' ) );
+
+// Enable shortcode on widget area
+add_filter('widget_text', 'do_shortcode');

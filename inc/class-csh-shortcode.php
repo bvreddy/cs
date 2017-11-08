@@ -140,6 +140,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
                 'height' => null,
                 'class' => '',
                 'shape' => '',
+                'clip' => false,
             ), $atts, $shortcode );
             // use like -  '.$a["title"].'   
         
@@ -150,6 +151,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $height = $a["height"];
         $class = $a["class"];
         $custom_shape = $a["shape"];
+        $clip = $a["clip"];
         
         $url_id =  wp_get_attachment_url( $img_id );
 
@@ -159,7 +161,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
             $float_class = 'csh-right';
         }
 
-
+        
         
         
         /**
@@ -181,7 +183,11 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
             $shape_outside = $custom_shape;
         }
 
-
+        if ( false == $clip ) {
+            $clip_path = '';
+        } else {
+            $clip_path = $custom_shape;
+        }
 
         // $shape_outside = "url($url_id)";
 
@@ -189,7 +195,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         $array_attr = array(
             'class' => ' '.$class.' ',
             // 'style' => 'shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.' ',
-            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.'; ',
+            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.'; clip-path: '.$clip_path.' ',
         );
 
 

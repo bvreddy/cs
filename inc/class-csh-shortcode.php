@@ -105,18 +105,22 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
      *                          (if the shortcode is used in its enclosing form)
      * @param string $shortcode - the shortcode tag, useful for shared callback functions
      * 
-     * @return - htm with img , insine styles with shape properties
+     * @return - html code with img tag, 
+     *           inline styles with shape-outside, float, shape-margin properties
      */
     public function shape_img( $atts = [], $content = 'null', $shortcode = '') {
         
     /**
-     * 
-     * @param int $id - image id - based on this get the image path
-     * @param string $url  - image url - shape can be given using image id or direct url
-     * @param string $float - float - left or right - default to left
-     * @param string $margin - set shape-margin
-     * @param string $width - widht of image - suffix with css units - px, em ..
-     * @param string $height - height of image - suffix with css units - px, em ..
+     * @array key values 
+     * @key int id - image id - based on this get the image path
+     * @key string url  - image url - shape can be given using image id or direct url
+     * @key string float - float - left or right - default to left
+     * @key string margin - set shape-margin
+     * @key string width - widht of image - suffix with css units - px, em ..
+     * @key string height - height of image - suffix with css units - px, em ..
+     * @key string shape - declare image shape - polygon, circle, eclipse ..
+     * @key boolean clip  - default false - dont clip the image,
+     *                      if true of anything clip the image @uses shape value
      * 
      * @var $img_id  - declare with shortcode attribute id to this variable
      * @var $\float  - decalre with shortcode attribute float to this variable
@@ -124,12 +128,15 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
      * @var $url     - decalre with shortcode attribute url value
      * @var $width  - declare with shortcode attribute width value
      * @var $height  - declare with shortcode attribute height value
+     * @var $shape  - declare with shortcode attribute shape value
+     * @var $clip  - declare with shorcode attribute clip value - true or false
      * 
      * @var $url_id  - get image url based on given img id
-     * @var s$hape_outside  - css shape-outside value - here given image url
+     * @var $custom_shape  - css shape-outside value - here given image url
      *                       works well if it is a transparent image, svg
      * @var $float_class  - if float given is right - add class csh-right - image flow to right
      *                     if left - add class csh-left - default one - img flow to left
+     * @var $clip_path  - if true clip the image by using $custom_shape
      */
         $a = shortcode_atts(
             array(
@@ -142,7 +149,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
                 'shape' => '',
                 'clip' => false,
             ), $atts, $shortcode );
-            // use like -  '.$a["title"].'   
+            // use like -  '.$a["id"].'   
         
         $img_id = $a["id"];
         $float = $a["float"];
@@ -162,11 +169,9 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         }
 
         
-        
-        
         /**
-         * there is a problem if pass this way - with suffix for - svg images ..
-         * return like this - <img width="1" height="1"  --  1 * 1 - its not displaying ..
+         * there is a problem if width, height pass in this way - with suffix for - svg images
+         * return like this - <img width="1" height="1"  --  1 * 1 - its not displaying
          * instead added styles using style attributes
          * 
          * @see https://core.trac.wordpress.org/ticket/26256
@@ -188,8 +193,6 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         } else {
             $clip_path = $custom_shape;
         }
-
-        // $shape_outside = "url($url_id)";
 
 
         $array_attr = array(

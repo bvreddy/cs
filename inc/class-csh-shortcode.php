@@ -118,7 +118,8 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
      * @key string margin - set shape-margin
      * @key string width - widht of image - suffix with css units - px, em ..
      * @key string height - height of image - suffix with css units - px, em ..
-     * @key string shape - declare image shape - polygon, circle, eclipse ..
+     * @key string shape - declare image shape - 
+     *                      polygon, circle, eclipse, inset ..
      * @key boolean clip  - default false - dont clip the image,
      *                      if true of anything clip the image @uses shape value
      * 

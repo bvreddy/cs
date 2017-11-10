@@ -18,6 +18,8 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
     /**
      * use shortcode to add img, shape
      * e.g. - [shape id=57] -  id - is image id.
+     * 
+     * @since 1.0.0
      *
      * @uses self::csh_shortcodes_init  - add_shortcode hook
      * 
@@ -40,7 +42,7 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
      * @key string margin - set shape-margin
      * @key string width - widht of image - suffix with css units - px, em ..
      * @key string height - height of image - suffix with css units - px, em ..
-     * @key string shape - declare image shape - 
+     * @key string shape - declare image shape - ( not mandatory - default to img shape )
      *                      polygon, circle, eclipse, inset ..
      * @key boolean clip  - default false - dont clip the image,
      *                      if true of anything clip the image @uses shape value
@@ -60,6 +62,8 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
      * @var $float_class  - if float given is right - add class csh-right - image flow to right
      *                     if left - add class csh-left - default one - img flow to left
      * @var $clip_path  - if true clip the image by using $custom_shape
+     * @var $general_margin  - adds margin- left or right based on image float. value is $margin
+     *                         in some images at corners shape-margin not works, this works
      */
         $a = shortcode_atts(
             array(
@@ -87,8 +91,10 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
 
         if( 'left' == $float) {
             $float_class = 'csh-left';
+            $general_margin = 'margin-right';
         } elseif ( 'right' == $float ) {
             $float_class = 'csh-right';
+            $general_margin = 'margin-left';
         }
 
         
@@ -117,11 +123,13 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
             $clip_path = $custom_shape;
         }
 
+        
+
 
         $array_attr = array(
             'class' => ' '.$class.' ',
             // 'style' => 'shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.' ',
-            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.'; clip-path: '.$clip_path.' ',
+            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.';  '.$general_margin.': '.$margin.'; clip-path: '.$clip_path.' ',
         );
 
 

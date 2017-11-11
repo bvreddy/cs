@@ -39,7 +39,7 @@ require_once('inc/test.php');
  * else - include files to non-admin area 
  */
 if ( is_admin() ) {
-
+    require_once('admin/admin.php');
 } else {
     require_once('inc/class-csh-enqueue-scripts-styles.php');
 

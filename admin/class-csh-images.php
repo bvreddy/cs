@@ -16,7 +16,7 @@ class CSH_images {
 
     /**
      * add mime types ( support mime uploads )
-     * @action css-shapes->upload_mimes - filter hook
+     * @uses css-shapes.php->upload_mimes - filter hook
      * 
      * @param $mimes Current array of mime types
      * 

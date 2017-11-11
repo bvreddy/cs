@@ -31,8 +31,6 @@ require_once('admin/class-csh-images.php');
 require_once('inc/class-csh-shortcode.php');
 
 
-require_once('inc/test.php');
-
 
 /**
  * is_admin - include file to admin area - only if it is_admin
@@ -56,9 +54,6 @@ register_activation_hook( __FILE__, array( 'CSH_Register', 'activate' )  );
 // when plugin updated - check version diff
 add_action('plugins_loaded', array( 'CSH_Register', 'plugin_update' ) );
 
-// add mimes types - add support for svg upload
-add_filter( 'upload_mimes', array( 'CSH_images', 'add_mime_types' ) );
-
 // Enqueue Styles, Scripts for non-admin area
 add_action('wp_enqueue_scripts', array( 'CSH_Enqueue_Scripts_Sytles', 'enqueue' ) );
 
@@ -70,3 +65,14 @@ add_action('init', array( $shortcode, 'csh_shortcodes_init' ) );
 
 // Enable shortcode on widget area
 add_filter('widget_text', 'do_shortcode');
+
+// Get csh_options from wp options db table
+$csh_options = get_option('csh_options');
+
+/**
+ * add mimes types - add support for svg upload.
+ * add only if user enabled svg images upload
+ */
+if ( isset( $csh_options['svg_enable'] ) ) {
+    add_filter( 'upload_mimes', array( 'CSH_images', 'add_mime_types' ) );
+}

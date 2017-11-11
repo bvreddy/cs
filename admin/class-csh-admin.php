@@ -66,7 +66,7 @@ class CSH_Admin {
         <?php
         }
         ?>
-        <p class="description">checkmark to Enable SVG Images upload - <a href="#">moreinfo</a> </p>
+        <p class="description">checkmark to Enable SVG Images upload - <a href="https://venkat.club/shapes/enable-svg-images-upload/">moreinfo</a> </p>
         <?php
     }
 

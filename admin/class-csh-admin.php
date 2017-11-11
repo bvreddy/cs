@@ -58,7 +58,6 @@ class CSH_Admin {
         if ( isset( $csh_svg_enable['svg_enable'] ) ) {
         ?>
             <input type="checkbox" name="csh_options[svg_enable]" checked value="1" id="">
-            <!-- <input type="checkbox" name="csh_options[svg_enable]" <?php //checked( $csh_svg_enable['svg_enable'], 1 ); ?> value="1" id=""> -->
             enabled
         <?php
         } else {

@@ -1,26 +1,18 @@
 <?php
 /*
-Plugin Name: CSS Shapes
-Plugin URI:  https://wordpress.org/plugins/
-Description: CSS Shapes
-Version:     0.1
-Author:      Venkat
+Plugin Name: WP CSS Shapes
+Plugin URI:  https://codecanyon.net/user/bhvr
+Description: Created based on CSS Shapes, Wrap inline content around css float images
+Version:     1.0.0
+Author:      Venkat Team
 Author URI:  https://venkat.club/shapes
-License:     GPL2
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: csh_text
 */
 
-/**
- * WordPress CSS Shapes 
- * @package csh
- * 
- * csh - simply called for CssSHapes
- */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
-define( 'CSH_VERSION', '0.1' );
+define( 'CSH_VERSION', '1.0.0' );
 define( 'CSH_WP_MIN_VERSION', '3.1.0' );
 define( 'CSH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CSH_PLUGIN_FILE', __FILE__ );

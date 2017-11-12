@@ -124,10 +124,10 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         }
 
         
-
-        
-        
-
+        /**
+         * if width, height, clip-path not defined
+         * then dont pass that null ( invalid ) values
+         */
         if ( '' == $width || null == $width ) {
             $add_width = '' ;
         } else {

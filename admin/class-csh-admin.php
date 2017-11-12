@@ -19,7 +19,7 @@ class CSH_Admin {
             'manage_options',
             'wp-css-shapes',
             array( $this, 'settings_page' ),
-            'dashicons-format-chat'
+            'dashicons-heart'
         );
     }
 
@@ -37,7 +37,7 @@ class CSH_Admin {
 
     public function csh_custom_settings() {
 
-        register_setting( 'csh_settings_group', 'csh_options' , 'csh_options_sanitize' );
+        register_setting( 'csh_settings_group', 'csh_options' , array( $this, 'csh_options_sanitize' ) );
         
         add_settings_section( 'csh_settings', '', array( $this, 'csh_settings_section_cb' ), 'csh_options_settings' );
         
@@ -83,16 +83,16 @@ class CSH_Admin {
      */
     public function csh_options_sanitize( $input ) {
 
-        // if ( ! current_user_can( 'manage_options' ) ) {
-        //     wp_die( 'not allowed to modify - please contact admin ' );
-        // }
+        if ( ! current_user_can( 'manage_options' ) ) {
+            wp_die( 'not allowed to modify - please contact admin ' );
+        }
 
-        // $new_input = array();
+        $new_input = array();
 
-        // if( isset( $input['enable'] ) )
-        // $new_input['enable'] = sanitize_text_field( $input['enable'] );
+        if( isset( $input['svg_enable'] ) )
+        $new_input['svg_enable'] = sanitize_text_field( $input['svg_enable'] );
 
-        // return $new_input;
+        return $new_input;
     }
 
 

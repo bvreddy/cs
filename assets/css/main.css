@@ -1,3 +1,20 @@
+/*
+Theme Name: WP CSS Shapes
+Description: This load on front end of website ( not on wp-admin )
+*/
+
+
+/**
+ * Table of Contents:
+ *
+ * 1.0 - basic styles
+ * 2.0 - predefined class for images
+ */
+
+
+/**
+ * 1.0 - basic styles
+ */
 .csh-margin {
   shape-margin: 1em; }
 
@@ -9,9 +26,9 @@
 
 
 
-  /**
-  *
-  */
+/**
+ * 2.0 - predefined class for images
+ */
 .img-50 {
   max-width: 50% !important;
 }

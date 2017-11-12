@@ -127,6 +127,10 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
         /**
          * if width, height, clip-path not defined
          * then dont pass that null ( invalid ) values
+         * 
+         * @var string $add_width - if $width is not null then add $width to style attribute 
+         * @var string $add_height - if $height is not null then add $height to style attribute 
+         * @var string $add_clip_path - if $clip_path is not null then add $clip_path to style attribute 
          */
         if ( '' == $width || null == $width ) {
             $add_width = '' ;

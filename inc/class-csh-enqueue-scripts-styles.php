@@ -11,7 +11,8 @@ class CSH_Enqueue_Scripts_Sytles {
 
     /**
      * Enqueue Styles, Scripts to public pages - wp front end
-     *
+     * 
+     * @uses action hook - wp_enqueue_scripts
      * @return void
      */
     public static function enqueue() {

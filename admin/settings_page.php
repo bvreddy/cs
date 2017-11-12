@@ -2,7 +2,7 @@
 /**
  * template: wp css shapes - options page
  * @uses CSH_Admin::settings_page
- * 
+ * @since 1.0.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;

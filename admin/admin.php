@@ -1,6 +1,6 @@
 <?php
 /**
- * Centeral file for admin 
+ * Central file for admin 
  * 
  * @package csh
  * @subpackage Admin

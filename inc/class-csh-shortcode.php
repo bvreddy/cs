@@ -125,11 +125,32 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
 
         
 
+        
+        
+
+        if ( '' == $width || null == $width ) {
+            $add_width = '' ;
+        } else {
+            $add_width = ' width: '.$width.'; ' ;
+        }
+
+        if ( '' == $height || null == $height ) {
+            $add_height = '' ;
+        } else {
+            $add_height = ' height: '.$height.'; ' ;
+        }
+
+        if ( '' == $clip_path || null == $clip_path ) {
+            $add_clip_path = '' ;
+        } else {
+            $add_clip_path = ' clip-path: '.$clip_path.'; ' ;
+        }
+
 
         $array_attr = array(
             'class' => ' '.$class.' ',
             // 'style' => 'shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.' ',
-            'style' => 'width: '.$width.'; height: '.$height.'; shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.';  '.$general_margin.': '.$margin.'; clip-path: '.$clip_path.' ',
+            'style' =>  ' '.$add_width.' '.$add_height.'  shape-outside: '.$shape_outside.' ; shape-margin: '.$margin.';  '.$general_margin.': '.$margin.'; '.$add_clip_path.' ',
         );
 
 

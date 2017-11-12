@@ -59,7 +59,7 @@ class CSH_Register {
     
 
     /**
-     * @uses plugins_loaded hook 
+     * @uses action hook - plugins_loaded  
      * 
      * compare this content version with saved version in db
      * If version is different then run activate function

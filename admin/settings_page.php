@@ -1,6 +1,7 @@
 <?php
 /**
- * 
+ * template: wp css shapes - options page
+ * @uses CSH_Admin::settings_page
  * 
  */
 

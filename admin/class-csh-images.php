@@ -5,6 +5,7 @@
  * Added support for uploading svg images
  * 
  * @package csh
+ * @since 1.0.0
  */
 
 
@@ -18,7 +19,7 @@ class CSH_images {
      * add mime types ( support mime uploads )
      * @uses css-shapes.php->upload_mimes - filter hook
      * 
-     * @param $mimes Current array of mime types
+     * @param array $mimes Current array of mime types
      * 
      * @return Updated array of mime types
      * 

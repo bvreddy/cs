@@ -1,6 +1,11 @@
 <?php
 /**
+ * Creates top level menu
+ * and options page 
  * 
+ * @package csh
+ * @subpackage admin
+ * @since 1.0.0
  * 
  */
 
@@ -11,7 +16,14 @@ if ( ! class_exists( 'CSH_Admin' ) ) :
 class CSH_Admin {
 
 
-    // add menu
+    /**
+     * Adds top level menu -> WP CSS Shapes
+     *
+     * @uses action hook - admin_menu
+     * 
+     * @since 1.0.0
+     * @return void
+     */
     public function csh_options_page() {
         add_menu_page(
             'WordPress CSS Shapes - Settings Page',
@@ -24,17 +36,34 @@ class CSH_Admin {
     }
 
 
-    // setting page
+    /**
+     * Options page Content - 
+     *   get settings form from a template settings_page.php
+     * 
+     * Call back from - $this->csh_options_page, add_menu_page
+     *
+     * @since 1.0.0
+     * @return void
+     */
     public function settings_page() {
         
         if ( ! current_user_can('manage_options') ) {
             return;
         }
 
+        // get options page form
         require_once('settings_page.php'); 
     }
 
 
+    /**
+     * Options page - Regsiter, add section and add setting fields
+     *
+     * @uses action hook - admin_init
+     * 
+     * @since 1.0.0
+     * @return void
+     */
     public function csh_custom_settings() {
 
         register_setting( 'csh_settings_group', 'csh_options' , array( $this, 'csh_options_sanitize' ) );
@@ -45,12 +74,19 @@ class CSH_Admin {
 
     }
 
-    // heading
+    // section heading
     function csh_settings_section_cb() {
         echo '<h1>WP CSS Shapes - Settings</h1>';
     }
     
-
+    /**
+     * Options page - call back
+     * 
+     * enable svg upload
+     *
+     * @since 1.0.0
+     * @return void
+     */
     public function csh_svg_enable_cb() {
 
         $csh_svg_enable = get_option('csh_options');
@@ -71,15 +107,11 @@ class CSH_Admin {
     }
 
 
-
-
-
-
     /**
-     * Sanitize callback
+     * Sanitize each setting field as needed
      *
-     * @param 
-     * @return
+     * @since 1.0.0
+     * @param array $input Contains all settings fields as array keys
      */
     public function csh_options_sanitize( $input ) {
 
@@ -97,21 +129,6 @@ class CSH_Admin {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
 }
-    
-    
 
-    
-    
-    endif; // END class_exists check
+endif; // END class_exists check

@@ -1,17 +1,18 @@
 <?php
 /**
+ * Centeral file for admin 
  * 
  * @package csh
- * @subpackage Administration
+ * @subpackage Admin
  * @since 1.0.0
+ * 
+ * subpackage Admin loads only on wp-admin 
  */
 
 if ( ! defined( 'ABSPATH' ) ) exit;
 
 
 require_once('class-csh-admin.php');
-
-
 
 
 $admin = new CSH_Admin();

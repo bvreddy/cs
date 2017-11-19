@@ -168,6 +168,14 @@ if ( ! class_exists( 'CSH_Shortcode' ) ) :
 
 
     /**
+     * @deprecated 1.1.0 in favor of shape shortcode
+     * 
+     * shape  - shortcode covers almost all the things, 
+     * but this shape_svg is easy in one way 
+     * add image in b/w shap_img shortcode.
+     * i.e. [shape_svg] add image here [/shape_svg] 
+     * but shape shortcode have more options.  
+     * 
      * 
      * wrap the shortcode with in image - [shape_svg]image [/shape_svg]
      * 

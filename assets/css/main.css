@@ -1,5 +1,5 @@
 /*
-Theme Name: WP CSS Shapes
+Theme Name: WP Shapes
 Description: This load on front end of website ( not on wp-admin )
 */
 
@@ -59,4 +59,14 @@ Description: This load on front end of website ( not on wp-admin )
 
 .auto-h {
   height: auto;
+}
+
+
+.main {
+  color: pink;
+  text-overflow: clip;
+}
+
+.content p {
+  margin-top: 100px;
 }

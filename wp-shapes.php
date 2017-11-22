@@ -2,7 +2,7 @@
 /*
 Plugin Name: WP Shapes
 Plugin URI:  https://codecanyon.net/user/bhvr
-Description: Wrap inline content around css float images, Created based on CSS Shapes 
+Description: Wrap inline content around image
 Version:     1.0.0
 Author:      HoliThemes
 Author URI:  https://venkat.club/shapes

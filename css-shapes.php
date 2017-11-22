@@ -1,11 +1,13 @@
 <?php
 /*
-Plugin Name: WP CSS Shapes
+Plugin Name: WP Shapes
 Plugin URI:  https://codecanyon.net/user/bhvr
-Description: Created based on CSS Shapes, Wrap inline content around css float images
+Description: Wrap inline content around css float images, Created based on CSS Shapes 
 Version:     1.0.0
-Author:      Venkat Team
+Author:      HoliThemes
 Author URI:  https://venkat.club/shapes
+License:     GPL2
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: csh_text
 */
 

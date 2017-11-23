@@ -1,11 +1,11 @@
 <?php
 /*
 Plugin Name: WP Shapes
-Plugin URI:  https://codecanyon.net/user/bhvr
+Plugin URI:  https://holithemes.com/wp-css-shapes/
 Description: Wrap inline content around image
 Version:     1.0.0
 Author:      HoliThemes
-Author URI:  https://venkat.club/shapes
+Author URI:  https://holithemes.com/wp-css-shapes/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: csh_text

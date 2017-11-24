@@ -3,6 +3,7 @@ Requires at least: 4.0.0
 Tested up to: 4.9
 Requires PHP: 5.6
 Contributors: holithemes
+Donate link: https://www.paypal.me/ugadi
 Stable tag: trunk
 Tags: wp shapes, css shapes, wp css shapes, image shapes, content shape, text shape, shape-outside, svg, enable svg, holithemes
 License: GPLv2 or later

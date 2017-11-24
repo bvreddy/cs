@@ -17,7 +17,7 @@ Instead of content looks like a box shape, now content looks in a shape based on
 
 for more information and to get an idea please check the demo. 
 
-[Documentation, Demo, Examples](https://holithemes.com/wp-css-shapes/)
+[Documentation, Demo, Examples](https://holithemes.com/wp-shapes/)
 
 Happy to say that, This is the first WordPress plugin released in public, based on CSS Shapes
 
@@ -35,7 +35,7 @@ By default WordPress not supports uploading SVG images.
 At plugin setting page, We can enable upload SVG Images.
 
 == Documentation ==
-Its easy to get started with WP-CSS-Shapes plugin
+Its easy to get started with WP-Shapes plugin
 
 = step-1 : upload image and get image id =
 
@@ -57,7 +57,7 @@ can notice at bottom left corner with an url
 
 at there we can notice post=<id-number>
 
-[more info](https://holithemes.com/wp-css-shapes/how-to-find-image-id-wordpress/)
+[more info](https://holithemes.com/wp-shapes/how-to-find-image-id-wordpress/)
 
 
 = step-2: Add shortcode and its attributes =
@@ -68,7 +68,7 @@ Add shortcode in WordPress post edit with a attribute
 
 id=40, 40 is the image id.
 
-[more info](https://holithemes.com/wp-css-shapes/shortcodes/)
+[more info](https://holithemes.com/wp-shapes/shortcodes/)
 
 
 = Adding svg images =
@@ -79,7 +79,7 @@ If you like to add svg images, at wp admin
 go to menu  - wp css shapes - and then checkmark - enable svg images
 and save changes
 
-[more info](https://holithemes.com/wp-css-shapes/enable-svg-images-upload/)
+[more info](https://holithemes.com/wp-shapes/enable-svg-images-upload/)
 
 
 == screenshots ==

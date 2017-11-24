@@ -1,7 +1,7 @@
 <?php
 /*
 Plugin Name: WP Shapes
-Plugin URI:  https://holithemes.com/wp-css-shapes/
+Plugin URI:  https://holithemes.com/wp-shapes/
 Description: Wrap inline content around image
 Version:     1.0.0
 Author:      HoliThemes

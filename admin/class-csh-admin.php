@@ -26,10 +26,10 @@ class CSH_Admin {
      */
     public function csh_options_page() {
         add_menu_page(
-            'WordPress CSS Shapes - Settings Page',
-            'WP CSS Shapes',
+            'WP Shapes - Settings Page',
+            'WP Shapes',
             'manage_options',
-            'wp-css-shapes',
+            'wp-shapes',
             array( $this, 'settings_page' ),
             'dashicons-heart'
         );

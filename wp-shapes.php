@@ -5,7 +5,7 @@ Plugin URI:  https://holithemes.com/wp-css-shapes/
 Description: Wrap inline content around image
 Version:     1.0.0
 Author:      HoliThemes
-Author URI:  https://holithemes.com/wp-css-shapes/
+Author URI:  https://holithemes.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: csh_text

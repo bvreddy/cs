@@ -19,6 +19,8 @@ for more information and to get an idea please check the demo.
 
 [Documentation, Demo, Examples](https://holithemes.com/wp-css-shapes/)
 
+Happy to say that, This is the first WordPress plugin released in public, based on CSS Shapes
+
 = note =
 This plugin is build based on CSS Shapes
 It a new css feature. Currently 80% of the usage browsers [supports](https://caniuse.com/#feat=css-shapes) this feature. 

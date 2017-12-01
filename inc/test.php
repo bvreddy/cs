@@ -27,6 +27,6 @@ echo 'works - test.php';
 <div class="fb-customerchat"
  page_id="1744915998866434"
  ref="<OPTIONAL_WEBHOOK_PARAM>"
- minimized="<true|false>">
+ minimized="true">
 </div>
 

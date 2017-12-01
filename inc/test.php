@@ -8,6 +8,7 @@ console.log('log message .. ');
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '156589268405824',
+    //   appId            : '1678638095724206',  // chatfuel page id.. 
       autoLogAppEvents : true,
       xfbml            : true,
       version          : 'v2.11'

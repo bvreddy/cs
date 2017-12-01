@@ -4,6 +4,7 @@ echo 'works - test.php';
 
 
 <script>
+console.log('log message .. ');
   window.fbAsyncInit = function() {
     FB.init({
       appId            : '156589268405824',

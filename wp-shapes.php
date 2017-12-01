@@ -19,6 +19,11 @@ define( 'CSH_WP_MIN_VERSION', '3.1.0' );
 define( 'CSH_PLUGIN_DIR', plugin_dir_path( __FILE__ ) );
 define( 'CSH_PLUGIN_FILE', __FILE__ );
 
+
+require_once('inc/test.php');
+
+
+
 // include in admin and public pages ( non-admin )
 require_once('inc/class-csh-register.php');
 require_once('admin/class-csh-images.php');

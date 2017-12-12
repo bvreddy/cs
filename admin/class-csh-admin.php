@@ -102,7 +102,7 @@ class CSH_Admin {
         <?php
         }
         ?>
-        <p class="description"><?php _e( 'checkmark to Enable SVG Images upload' , 'wp-shapes' ) ?> - <a target="_blank" href="https://holithemes.com/wp-shapes/enable-svg-images-upload/"><?php _e( 'moreinfo' , 'wp-shapes' ) ?></a> </p>
+        <p class="description"><?php _e( 'checkmark to Enable SVG Images upload' , 'wp-shapes' ) ?> - <a target="_blank" href="https://holithemes.com/wp-shapes/enable-svg-images-upload/"><?php _e( 'more info' , 'wp-shapes' ) ?></a> </p>
         <?php
     }
 

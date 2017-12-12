@@ -70,13 +70,13 @@ class CSH_Admin {
         
         add_settings_section( 'csh_settings', '', array( $this, 'csh_settings_section_cb' ), 'csh_options_settings' );
         
-        add_settings_field( 'csh_enable_svg', 'Enable SVG images upload', array( $this, 'csh_svg_enable_cb' ), 'csh_options_settings', 'csh_settings' );
+        add_settings_field( 'csh_enable_svg', __( 'Enable SVG images upload' , 'wp-shapes' ) , array( $this, 'csh_svg_enable_cb' ), 'csh_options_settings', 'csh_settings' );
 
     }
 
     // section heading
     function csh_settings_section_cb() {
-        echo '<h1>WP CSS Shapes - Settings</h1>';
+        echo '<h1>WP-Shapes - '.__( 'Settings', 'wp-shapes' ).' </h1>';
     }
     
     /**
@@ -94,7 +94,7 @@ class CSH_Admin {
         if ( isset( $csh_svg_enable['svg_enable'] ) ) {
         ?>
             <input type="checkbox" name="csh_options[svg_enable]" checked value="1" id="">
-            enabled
+            <?php echo __( 'enabled' , 'wp-shapes' ) ?>
         <?php
         } else {
         ?>
@@ -102,7 +102,7 @@ class CSH_Admin {
         <?php
         }
         ?>
-        <p class="description">checkmark to Enable SVG Images upload - <a target="_blank" href="https://holithemes.com/wp-shapes/enable-svg-images-upload/">moreinfo</a> </p>
+        <p class="description"><?php _e( 'checkmark to Enable SVG Images upload' , 'wp-shapes' ) ?> - <a target="_blank" href="https://holithemes.com/wp-shapes/enable-svg-images-upload/"><?php _e( 'moreinfo' , 'wp-shapes' ) ?></a> </p>
         <?php
     }
 

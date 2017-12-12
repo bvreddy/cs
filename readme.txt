@@ -1,5 +1,5 @@
 === WP SHAPES ===
-Requires at least: 4.0.0
+Requires at least: 4.6
 Tested up to: 4.9
 Requires PHP: 5.6
 Contributors: holithemes

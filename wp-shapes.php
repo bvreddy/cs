@@ -8,7 +8,7 @@ Author:      HoliThemes
 Author URI:  https://holithemes.com/
 License:     GPL2
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: csh_text
+Text Domain: wp-shapes
 */
 
 
